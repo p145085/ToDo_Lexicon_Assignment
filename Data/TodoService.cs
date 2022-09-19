@@ -24,5 +24,57 @@ namespace ToDo_Lexicon_Assignment.Data
         {
             todos = new Todo[0];
         }
+
+        public Todo[] FindByDoneStatus(bool doneStatus)
+        {
+            Todo[] foo = new Todo[0];
+            foreach (Todo todo in todos)
+            {
+                if (todo.myDone == doneStatus)
+                {
+                    foo.Append(todo);
+                }
+            }
+            return foo;
+        }
+
+        public Todo[] FindByAssignee(int personId)
+        {
+            Todo[] foo = new Todo[0];
+            foreach (Todo todo in todos)
+            {
+                if (todo.myID == personId)
+                {
+                    foo.Append(todo);
+                }
+            }
+            return foo;
+        }
+
+        public Todo[] FindByAssignee(Person assignee)
+        {
+            Todo[] foo = new Todo[0];
+            foreach (Todo todo in todos)
+            {
+                if (todo.myAssignee == assignee)
+                {
+                    foo.Append(todo);
+                }
+            }
+            return foo;
+        }
+
+        public Todo[] FindUnassignedTodoItems()
+        {
+            Todo[] foo = new Todo[0];
+            foreach (Todo todo in todos)
+            {
+                if (todo.myAssignee == null)
+                {
+                    foo.Append(todo);
+                }
+            }
+            return foo;
+        }
     }
 }
