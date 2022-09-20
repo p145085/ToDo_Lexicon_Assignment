@@ -24,5 +24,23 @@ namespace ToDo_Lexicon_Assignment.Data
         {
             people = new Person[0];
         }
+
+        public void RemovePerson(int id)
+        {
+            Person found = FindById(id);
+        
+            for (int i = 0; i < people.Length; i++)
+            {
+                if (people[i] == found)
+                {
+                    for (int offset = i + 1; offset < people.Length; offset++, i++)
+                    {
+                        people[i] = people[offset];
+                    }
+                    Array.Resize(ref people, people.Length - 1);
+                    break;
+                }
+            }
+        }
     }
 }

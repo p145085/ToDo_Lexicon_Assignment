@@ -76,5 +76,23 @@ namespace ToDo_Lexicon_Assignment.Data
             }
             return foo;
         }
+
+        public void RemoveTodo(int id)
+        {
+            Todo found = FindById(id);
+
+            for (int i = 0; i < todos.Length; i++)
+            {
+                if (todos[i] == found)
+                {
+                    for (int offset = i + 1; offset < todos.Length; offset++, i++)
+                    {
+                        todos[i] = todos[offset];
+                    }
+                    Array.Resize(ref todos, todos.Length - 1);
+                    break;
+                }
+            }
+        }
     }
 }
