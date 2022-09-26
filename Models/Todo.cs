@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToDo_Lexicon_Assignment.Models
 {
-    internal class Todo
+    public class Todo
     {
         private readonly int Id;
         private string? Description;

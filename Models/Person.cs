@@ -6,34 +6,68 @@ using System.Threading.Tasks;
 
 namespace ToDo_Lexicon_Assignment.Models
 {
-    internal class Person
+    public class Person
     {
-        private readonly int Id;
-        private string? FirstName;
-        private string? LastName;
+        private readonly int id;
+        private string firstName;
+        private string lastName;
 
-        public Person(int id, string firstName, string lastName)
+        public Person(string firstName, string lastName, int id)
         {
-            this.Id = ++Id;
-            if (!string.IsNullOrWhiteSpace(firstName))
-            {
-                this.FirstName = firstName;
-            } else throw new ArgumentNullException();
-            if (!string.IsNullOrWhiteSpace(lastName))
-            {
-                this.LastName = lastName;
-            } else throw new ArgumentNullException();
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.id = id;
         }
-        public string fullName {
+
+        public string? FirstName 
+        { 
+            get
+            {
+                return this.firstName;
+            }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Firstname cannot be null.");
+                }
+                else
+                {
+                    this.firstName = value;
+                }
+            }
+        }
+        public string? LastName
+        {
+            get
+            {
+                return this.lastName;
+            }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("lastName cannot be null.");
+                }
+                else
+                {
+                    this.lastName = value;
+                }
+            }
+        }
+
+        public string fullName
+        {
             get
             {
                 return FirstName + " " + LastName;
             }
         }
-        public int getID {
+
+        public int PersonId {
             get
             {
-                return Id;
+                return id;
             }
         }
     }

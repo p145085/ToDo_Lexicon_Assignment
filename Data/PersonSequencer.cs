@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToDo_Lexicon_Assignment.Data
 {
-    internal class PersonSequencer
+    public class PersonSequencer
     {
         private static int personId;
 
@@ -17,6 +17,18 @@ namespace ToDo_Lexicon_Assignment.Data
         public static void Reset()
         {
             personId = 0;
+        }
+
+        public int PersonId
+        {
+            get
+            {
+                return personId;
+            }
+            set
+            {
+                personId = value;
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ using ToDo_Lexicon_Assignment.Models;
 
 namespace ToDo_Lexicon_Assignment.Data
 {
-    internal class TodoService
+    public class TodoService
     {
         private static Todo[] todos = new Todo[0];
         public int Size() { return todos.Length; }

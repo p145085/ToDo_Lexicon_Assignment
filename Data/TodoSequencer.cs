@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToDo_Lexicon_Assignment.Data
 {
-    internal class TodoSequencer
+    public class TodoSequencer
     {
         private static int TodoId;
 

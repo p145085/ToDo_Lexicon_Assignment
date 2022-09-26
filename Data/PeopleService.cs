@@ -7,7 +7,7 @@ using ToDo_Lexicon_Assignment.Models;
 
 namespace ToDo_Lexicon_Assignment.Data
 {
-    internal class PeopleService
+    public class PeopleService
     {
         private static Person[] people = new Person[0];
         public int Size() { return people.Length; }
@@ -16,7 +16,7 @@ namespace ToDo_Lexicon_Assignment.Data
 
         public Person AddNewPerson(string firstName, string lastName)
         {
-            Person newPerson = new Person(PersonSequencer.NextPersonId(), firstName, lastName);
+            Person newPerson = new Person(firstName, lastName, PersonSequencer.NextPersonId());
             people.Append(newPerson);
             return newPerson;
         }
