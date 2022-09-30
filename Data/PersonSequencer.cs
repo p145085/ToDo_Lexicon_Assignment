@@ -19,7 +19,7 @@ namespace ToDo_Lexicon_Assignment.Data
             personId = 0;
         }
 
-        public int PersonId
+        public static int PersonId
         {
             get
             {

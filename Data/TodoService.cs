@@ -30,7 +30,7 @@ namespace ToDo_Lexicon_Assignment.Data
             Todo[] foo = new Todo[0];
             foreach (Todo todo in todos)
             {
-                if (todo.myDone == doneStatus)
+                if (todo.Done == doneStatus)
                 {
                     foo.Append(todo);
                 }
@@ -43,7 +43,7 @@ namespace ToDo_Lexicon_Assignment.Data
             Todo[] foo = new Todo[0];
             foreach (Todo todo in todos)
             {
-                if (todo.myID == personId)
+                if (todo.TodoId == personId)
                 {
                     foo.Append(todo);
                 }
@@ -56,7 +56,7 @@ namespace ToDo_Lexicon_Assignment.Data
             Todo[] foo = new Todo[0];
             foreach (Todo todo in todos)
             {
-                if (todo.myAssignee == assignee)
+                if (todo.Assignee == assignee)
                 {
                     foo.Append(todo);
                 }
@@ -69,7 +69,7 @@ namespace ToDo_Lexicon_Assignment.Data
             Todo[] foo = new Todo[0];
             foreach (Todo todo in todos)
             {
-                if (todo.myAssignee == null)
+                if (todo.Assignee == null)
                 {
                     foo.Append(todo);
                 }
